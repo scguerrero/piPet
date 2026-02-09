@@ -31,6 +31,7 @@ class piPet
 		double critRate;
 		int critDmg;
 		int skillPoints;
+
 	public:
 		// Constructors (no arguments, with arguments) and destructor
 		piPet();
@@ -44,9 +45,9 @@ class piPet
 		// The piPet's Battle Actions
 		void basicAttack();
 		void skillAttack();
-		void useItem();
 		void defend();
-		
+		void useItem();
+
 		// Setters
 		bool setHunger(int);
 		bool setEnergy(int);
@@ -56,12 +57,12 @@ class piPet
 		bool setHappiness(int);
 		bool setAgeDays(int);
 		bool setAgeGroup(int);
-		bool setAtk(int);
-		bool setDef(int);
-		bool setHp(int);
+		bool setAttack(int);
+		bool setDefense(int);
+		bool setHealthPoints(int);
 		bool setCritRate(double);
 		bool setCritDmg(int);
-		bool setSp(int);
+		bool setSkillPoints(int);
 
 		// Getters
 		int getHunger();
@@ -72,11 +73,11 @@ class piPet
 		int getHappiness();
 		int getAgeDays();
 		int getAgeGroup();
-		int getAtk();
-		int getDef();
-		int getHp();
+		int getAttack();
+		int getDefense();
+		int getHealthPoints();
 		double getCritRate();
 		int getCritDmg();
-		int getSp();
+		int getSkillPoints();
 };
 #endif
