@@ -46,7 +46,6 @@ class piPet
 		void basicAttack();
 		void skillAttack();
 		void defend();
-		void useItem();
 
 		// Setters
 		bool setHunger(int);
