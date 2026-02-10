@@ -205,6 +205,8 @@ int piPet::getAgeGroup()
 int piPet::getAttack()
 { return attack; }
 
+#Test
+
 int piPet::getDefense()
 { return defense; }
 
