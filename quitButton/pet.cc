@@ -18,8 +18,8 @@ Pet::Pet() :
   set_title("piPet");
 
   // set margin around frame
-  m_frame.set_margin(10);
   set_child(m_frame);
+  m_frame.set_margin(10);
   m_frame.set_label("Quit/Fullscreen Widget");
   m_frame.set_label_align(Align::END);
 
