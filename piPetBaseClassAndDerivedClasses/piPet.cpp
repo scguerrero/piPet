@@ -69,10 +69,6 @@ void piPet::showStats()
 	printf("CRIT Rate: %.0f%%\nCRIT Dmg: %d\nSP: %d\n", critRate*100, critDmg, skillPoints);
 }
 
-//
-
-
-
 // Setters returns false if input value is invalid.
 // Otherwise, update member variable and return true.
 
