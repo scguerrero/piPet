@@ -10,19 +10,19 @@
 #include <iostream>
 using namespace std;
 
-void sealCat::basicAttack() const
+void sealCat::basicAttack()
 {
     cout << "The Seal Cat deals 100 DMG." << endl;
 }
 
 
-void sealCat::skillAttack() const
+void sealCat::skillAttack()
 {
     cout << "The Seal Cat deals 200 DMG." << endl;
 }
 
 
-void sealCat::defend() const
+void sealCat::defend()
 {
     cout << "The Seal Cat blocks 100 DMG." << endl;
 }

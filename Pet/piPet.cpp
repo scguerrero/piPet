@@ -6,6 +6,7 @@
 */
 #include "piPet.h"
 #include <cstdio>
+#include <iostream>
 using namespace std;
 
 // piPet default constructor with no arguments
@@ -67,6 +68,22 @@ void piPet::showStats()
 	printf("----Stats----\n");
 	printf("ATK: %d\nDEF: %d\nHP: %d\n", attack, defense, healthPoints);
 	printf("CRIT Rate: %.0f%%\nCRIT Dmg: %d\nSP: %d\n", critRate*100, critDmg, skillPoints);
+}
+
+// the pet's Battle Actions
+void piPet::basicAttack()
+{
+    cout << "The Pet deals 100 DMG." << endl;
+}
+
+void piPet::skillAttack()
+{
+    cout << "The Pet deals 200 DMG." << endl;
+}
+
+void piPet::defend()
+{
+    cout << "The Pet blocks 100 DMG." << endl;
 }
 
 // Setters returns false if input value is invalid.
@@ -215,3 +232,47 @@ int piPet::getCritDmg()
 
 int piPet::getSkillPoints()
 { return skillPoints; }
+
+// Incrementers add amnt ("amount") to the corresponding variable
+
+void piPet::increaseHunger(int amnt)
+{ hunger += amnt; }
+
+void piPet::increaseEnergy(int amnt)
+{ energy += amnt; }
+
+void piPet::increaseStrength(int amnt)
+{ strength += amnt; }
+
+void piPet::increaseHygiene(int amnt)
+{ hygiene += amnt; }
+
+void piPet::increaseIntelligence(int amnt)
+{ intelligence += amnt; }
+
+void piPet::increaseHappiness(int amnt)
+{ happiness += amnt; }
+
+void piPet::increaseAgeDays(int amnt)
+{ ageDays += amnt; }
+
+void piPet::moveUpAgeGroup()
+{ if (ageGroup < 3) ageGroup += 1; }
+
+void piPet::increaseAttack(int amnt)
+{ attack += amnt; }
+
+void piPet::increaseDefense(int amnt)
+{ defense += amnt; }
+
+void piPet::increaseHealthPoints(int amnt)
+{ healthPoints += amnt; }
+
+void piPet::increaseCritRate(double amnt)
+{ critRate += amnt; }
+
+void piPet::increaseCritDmg(int amnt)
+{ critDmg += amnt; }
+
+void piPet::increaseSkillPoints(int amnt)
+{ skillPoints += amnt; }

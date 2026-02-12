@@ -9,14 +9,14 @@
 
 #ifndef ELECTRICAXOLOTL_H
 #define ELECTRICAXOLOTL_H
-#include "piPet.cpp"
+#include "../Pet/piPet.cpp"
 using namespace std;
 
 class electricAxolotl:public piPet
 {
     public:
-        virtual void basicAttack() const;
-        virtual void skillAttack() const;
-        virtual void defend() const;
+        void basicAttack();
+        void skillAttack();
+        void defend();
 };
 #endif // ELECTRICAXOLOTL_H
