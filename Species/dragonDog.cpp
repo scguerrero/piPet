@@ -10,19 +10,19 @@
 #include <iostream>
 using namespace std;
 
-void dragonDog::basicAttack() const
+void dragonDog::basicAttack()
 {
     cout << "The Dragon Dog deals 100 DMG." << endl;
 }
 
 
-void dragonDog::skillAttack() const
+void dragonDog::skillAttack()
 {
     cout << "The Dragon Dog deals 200 DMG." << endl;
 }
 
 
-void dragonDog::defend() const
+void dragonDog::defend()
 {
     cout << "The Dragon Dog blocks 100 DMG." << endl;
 }

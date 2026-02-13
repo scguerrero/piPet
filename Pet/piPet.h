@@ -43,9 +43,9 @@ class piPet
 		void showStats();
 
 		// The piPet's Battle Actions
-		virtual void basicAttack() const = 0;
-		virtual void skillAttack() const = 0;
-		virtual void defend() const = 0;
+		void basicAttack();
+		void skillAttack();
+		void defend();
 
 		// Setters
 		bool setHunger(int);
@@ -78,5 +78,22 @@ class piPet
 		double getCritRate();
 		int getCritDmg();
 		int getSkillPoints();
+
+		// Incrementers
+		void increaseHunger(int);
+		void increaseEnergy(int);
+		void increaseStrength(int);
+		void increaseHygiene(int);
+		void increaseIntelligence(int);
+		void increaseHappiness(int);
+		void increaseAgeDays(int);
+		void moveUpAgeGroup();
+		void increaseAttack(int);
+		void increaseDefense(int);
+		void increaseHealthPoints(int);
+		void increaseCritRate(double);
+		void increaseCritDmg(int);
+		void increaseSkillPoints(int);
+
 };
 #endif

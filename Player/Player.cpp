@@ -23,17 +23,17 @@ void Player::setPet(const piPet& p) { pet = p; }
 
 // Actions
 void Player::feedPet() {
-    pet.increaseHunger(20); // Example: assumes piPet has this method
+    pet.increaseHunger(10); // Example: assumes piPet has this method
     std::cout << "Pet fed!\n";
 }
 
 void Player::sendPetToSleep() {
-    pet.sleep(); // Assumes piPet has a sleep() method
+    pet.increaseEnergy(10); // Assumes piPet has a sleep() method
     std::cout << "Pet is sleeping!\n";
 }
 
 void Player::groomPet() {
-    pet.groom(); // Assumes piPet has a groom() method
+    pet.increaseHygiene(10); // Assumes piPet has a groom() method
     std::cout << "Pet groomed!\n";
 }
 
@@ -43,6 +43,7 @@ double Player::getCareRating() const {
 }
 
 void Player::celebratePetBirthday() {
-    pet.incrementAgeCategory(); // Assumes piPet has this method
+    pet.moveUpAgeGroup(); // Assumes piPet has this method
     std::cout << "Happy Birthday to your pet!\n";
+    std::cout << "Pet age group: " << pet.getAgeGroup() << endl;
 }

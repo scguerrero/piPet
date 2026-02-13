@@ -14,8 +14,8 @@ using namespace std;
 class dragonDog:public piPet
 {
     public:
-        virtual void basicAttack() const;
-        virtual void skillAttack() const;
-        virtual void defend() const;
+        void basicAttack();
+        void skillAttack();
+        void defend();
 };
 #endif // DRAGONDOG_H

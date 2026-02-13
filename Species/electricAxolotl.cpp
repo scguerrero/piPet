@@ -9,19 +9,17 @@
 #include <iostream>
 using namespace std;
 
-void electricAxolotl::basicAttack() const
+void electricAxolotl::basicAttack()
 {
     cout << "The Electric Axolotl deals 100 DMG." << endl;
 }
 
-
-void electricAxolotl::skillAttack() const
+void electricAxolotl::skillAttack()
 {
     cout << "The Electric Axolotl deals 200 DMG." << endl;
 }
 
-
-void electricAxolotl::defend() const
+void electricAxolotl::defend()
 {
     cout << "The Electric Axolotl blocks 100 DMG." << endl;
 }
