@@ -8,9 +8,13 @@
 #include "mainWindow.h"
 #include <QApplication>
 
+// subclassing QWidget for the main window
 MainWindow::MainWindow(QWidget *parent)
     : QWidget{parent}
 {
+    // set label
+    label = new QLabel("piPet");
+
     // initialize buttons
     startButton = new QPushButton("Start Game", this);
     fsOnButton = new QPushButton("Fullscreen ON", this);
@@ -18,12 +22,14 @@ MainWindow::MainWindow(QWidget *parent)
     quitButton = new QPushButton("Quit Game", this);
 
     // connect signals to slots
+    connect(startButton, SIGNAL(clicked()), this, SLOT(openCreateWindow()));
     connect(fsOnButton, SIGNAL(clicked()), this, SLOT(turnOnFS()));
     connect(fsOffButton, SIGNAL(clicked()), this, SLOT(turnOffFS()));
     connect(quitButton, SIGNAL(clicked()), QApplication::instance(), SLOT(quit()));
 
     // add buttons to layout
     buttonLayout = new QVBoxLayout();
+    buttonLayout->addWidget(label);
     buttonLayout->addWidget(startButton);
     buttonLayout->addWidget(fsOnButton);
     buttonLayout->addWidget(fsOffButton);
@@ -32,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
     // add layout to window
     this->setLayout(buttonLayout);
     this->setStyleSheet("background: blue");
+    this->setWindowTitle("piPet");
 }
 
 void MainWindow::turnOnFS()
@@ -42,4 +49,11 @@ void MainWindow::turnOnFS()
 void MainWindow::turnOffFS()
 {
     this->showNormal();
+}
+
+void MainWindow::openCreateWindow()
+{
+    createwindow = new CreateWindow();
+    createwindow->show();
+    this->close();
 }
