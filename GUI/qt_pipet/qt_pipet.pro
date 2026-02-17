@@ -6,12 +6,20 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 SOURCES += \
     createWindow.cpp \
     main.cpp \
-    mainWindow.cpp
+    mainWindow.cpp \
+    modeSelectWindow.cpp \
+    nameBankWindow.cpp \
+    paletteWindow.cpp \
+    speciesWindow.cpp
 
 HEADERS += \
     createWindow.h \
     mainWindow.h \
-    mainWindow.h
+    mainWindow.h \
+    modeSelectWindow.h \
+    nameBankWindow.h \
+    paletteWindow.h \
+    speciesWindow.h
 
 
 HEADERS += \

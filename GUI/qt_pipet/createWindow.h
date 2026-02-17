@@ -8,6 +8,10 @@
 #ifndef CREATEWINDOW_H
 #define CREATEWINDOW_H
 #include <QtWidgets>
+#include "nameBankWindow.h"
+#include "speciesWindow.h"
+#include "paletteWindow.h"
+#include "modeSelectWindow.h"
 class CreateWindow : public QWidget
 {
     Q_OBJECT
@@ -18,8 +22,18 @@ class CreateWindow : public QWidget
         QPushButton *nameButton;
         QPushButton *speciesButton;
         QPushButton *paletteButton;
+        QPushButton *doneButton;
         QVBoxLayout *buttonLayout;
+        NameBankWindow *namebankwindow;
+        SpeciesWindow *specieswindow;
+        PaletteWindow *palettewindow;
+        ModeSelectWindow *modeselectwindow;
     signals:
+        private slots:
+            void openNameBankWindow();
+            void openSpeciesWindow();
+            void openPaletteWindow();
+            void openModeSelectWindow();
 };
 
 #endif // CREATEWINDOW_H
