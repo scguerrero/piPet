@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     // add layout to window
     this->setLayout(buttonLayout);
-    this->setStyleSheet("background: blue");
+    this->setStyleSheet("background: purple");
     this->setWindowTitle("piPet");
 }
 
@@ -54,6 +54,6 @@ void MainWindow::turnOffFS()
 void MainWindow::openCreateWindow()
 {
     createwindow = new CreateWindow();
-    createwindow->show();
+    createwindow->showFullScreen();
     this->close();
 }
