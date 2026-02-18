@@ -2,7 +2,7 @@
  * Main file for Qt application.
  * Author(s): Sasha C. Guerrero
  * Created: 2/9/2026
- * Last Edited: 2/17/2026
+ * Last Edited: 2/18/2026
  */
 
 #include "window.h"
@@ -14,7 +14,7 @@ int main(int argc, char**argv)
     QApplication app(argc, argv);
 
     // Set style properties
-    app.setStyleSheet("QPushButton { font-weight: bold }");
+    app.setStyleSheet("QWidget { font-family: monospace; background: azure; color: navy; letter-spacing: 1px }");
 
     // Initialize main window
     Window window;

@@ -8,6 +8,7 @@
 #ifndef CREATEWIDGET_H
 #define CREATEWIDGET_H
 #include <QtWidgets>
+#include "NameWidget.h"
 
 class CreateWidget : public QWidget
 {
@@ -19,8 +20,12 @@ private:
     QPushButton *species;
     QPushButton *palette;
     QVBoxLayout *menu;
-signals:
-private slots:
+    NameWidget *namewidget;
+    QLayoutItem *deleteable;
+    signals:
+    private slots:
+        void openNameWidget(); // open window for browsing through names
+
 };
 
 #endif // CREATEWIDGET_H

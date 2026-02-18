@@ -2,7 +2,7 @@
  * Window class implementation file.
  * Author(s): Sasha C. Guerrero
  * Created: 2/9/2026
- * Last Edited: 2/17/2026
+ * Last Edited: 2/18/2026
  */
 #include "window.h"
 
@@ -29,9 +29,9 @@ Window::Window(QWidget *parent)
     connect(start, SIGNAL(clicked()), this, SLOT(openCreateWidget()));
 
     // style properties
-    this->setStyleSheet("font-family: monospace; background: azure; color: navy; letter-spacing: 1px");
     title->setStyleSheet("font-size: 24px; font-weight: bold");
     title->setAlignment(Qt::AlignHCenter);
+    quit->setStyleSheet("background: navy; color: azure");
 
     // window properties
     this->setLayout(top);
@@ -42,11 +42,13 @@ Window::Window(QWidget *parent)
 void Window::openCreateWidget()
 {
     create = new CreateWidget();
-    // delete start button
-    deleteable = start_layout->replaceWidget(start,create);
-    delete deleteable->widget();
-    // delete title
-    deleteable = start_layout->takeAt(0);
-    delete deleteable->widget();
-    this->setLayout(top);
+    // code fragment from Qt docs for deleting all widgets inside a layout: https://doc.qt.io/qt-6/qlayout.html#takeAt
+    // delete all widgets from start_layout
+    while ((deleteable = start_layout->takeAt(0)) != nullptr)
+    {
+        delete deleteable->widget();
+        delete deleteable;
+    }
+    // add new widget to cleared layout
+    start_layout->addWidget(create);
 }

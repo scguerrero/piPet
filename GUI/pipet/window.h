@@ -2,7 +2,7 @@
  * Window class specification file.
  * Author(s): Sasha C. Guerrero
  * Created: 2/9/2026
- * Last Edited: 2/17/2026
+ * Last Edited: 2/18/2026
  */
 
 #ifndef WINDOW_H
@@ -25,7 +25,7 @@ private:
     QLayoutItem *deleteable; // holds layout item to be deleted
 signals:
 private slots:
-    void openCreateWidget(); // swap in new layout for pet creation
+    void openCreateWidget(); // swap current layout for pet creation layout
 };
 
 
