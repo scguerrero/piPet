@@ -3,38 +3,32 @@
  * This page of the game is for the Player to create their piPet.
  * Author(s): Sasha C. Guerrero
  * Created: 2/16/2026
- * Last Edited: 2/18/2026
+ * Last Edited: 2/19/2026
  */
 #include "CreateWidget.h"
 
 CreateWidget::CreateWidget(QWidget *parent)
     : QWidget{parent}
 {
-    // initialize widgets
-    name = new QPushButton("Name", this);
-    species = new QPushButton("Species", this);
-    palette = new QPushButton("Palette", this);
+    // initialize tab widget and tab items
     menu = new QVBoxLayout();
+    createTabs = new QTabWidget();
+    name = new QWidget();
+    species = new QWidget();
+    palette = new QWidget();
+    done = new QPushButton("Done");
 
-    // connect signals to slots
-    connect(name, SIGNAL(clicked()), this, SLOT(openNameWidget()));
+    // when done button is clicked, close the CreateWidget
+    connect(done, SIGNAL(clicked()), this, SLOT(close()));
+    // when the CreateWidget is closed, it is deleted
+    this->setAttribute(Qt::WA_DeleteOnClose);
 
-    // add widgets to layout
-    menu->addWidget(name);
-    menu->addWidget(species);
-    menu->addWidget(palette);
+    // add tab items to tab widget
+    createTabs->addTab(name, "Name");
+    createTabs->addTab(species, "Species");
+    createTabs->addTab(palette, "Palette");
+    menu->addWidget(createTabs);
+    menu->addWidget(done);
     this->setLayout(menu);
 }
 
-void CreateWidget::openNameWidget()
-{
-    namewidget = new NameWidget();
-    // delete all widgets from menu
-    while ((deleteable = menu->takeAt(0)) != nullptr)
-    {
-        delete deleteable->widget();
-        delete deleteable;
-    }
-    // add new widget to cleared layout
-    menu->addWidget(namewidget);
-}

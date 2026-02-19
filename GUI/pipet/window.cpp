@@ -2,7 +2,7 @@
  * Window class implementation file.
  * Author(s): Sasha C. Guerrero
  * Created: 2/9/2026
- * Last Edited: 2/18/2026
+ * Last Edited: 2/19/2026
  */
 #include "window.h"
 
@@ -24,8 +24,9 @@ Window::Window(QWidget *parent)
     top->addLayout(start_layout);
     top->addWidget(quit);
 
-    // connect signals to slots
+    // when quit button is clicked, quit application
     connect(quit, SIGNAL(clicked()), QApplication::instance(), SLOT(quit()));
+    // when start button is clicked, add CreateWidget to start_layout
     connect(start, SIGNAL(clicked()), this, SLOT(openCreateWidget()));
 
     // style properties
