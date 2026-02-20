@@ -32,12 +32,11 @@ Window::Window(QWidget *parent)
     // style properties
     title->setStyleSheet("font-size: 32px; font-weight: bold");
     title->setAlignment(Qt::AlignHCenter);
-    //quit->setStyleSheet("background: navy; color: azure");
-    quit->setStyleSheet("background: darkslategrey; color: darkseagreen");
+    quit->setStyleSheet("background: navy; color: azure");
 
     // window properties
     this->setLayout(top);
-    this->setWindowTitle("piPet");
+    this->setWindowTitle("PIPET");
     this->setContentsMargins(70,70,70,70);
 }
 
