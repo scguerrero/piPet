@@ -19,9 +19,9 @@ CreateWidget::CreateWidget(QWidget *parent)
     done = new QPushButton("Done");
 
     // when done button is clicked, close the CreateWidget
-    connect(done, SIGNAL(clicked()), this, SLOT(close()));
+    connect(done, SIGNAL(clicked()), this, SLOT(openModeWidget()));
     // when the CreateWidget is closed, it is deleted
-    this->setAttribute(Qt::WA_DeleteOnClose);
+    //this->setAttribute(Qt::WA_DeleteOnClose);
 
     // add tab items to tab widget
     createTabs->addTab(name, "Name");
@@ -32,3 +32,13 @@ CreateWidget::CreateWidget(QWidget *parent)
     this->setLayout(menu);
 }
 
+void CreateWidget::openModeWidget() {
+    mode = new ModeWidget();
+    // delete all widgets from start_layout
+    while ((deleteable = this->menu->takeAt(0)) != nullptr)
+    {
+        delete deleteable->widget();
+        delete deleteable;
+    }
+    menu->addWidget(mode);
+};

@@ -11,6 +11,7 @@
 #ifndef CREATEWIDGET_H
 #define CREATEWIDGET_H
 #include <QtWidgets>
+#include "ModeWidget.h"
 
 class CreateWidget : public QWidget
 {
@@ -24,8 +25,11 @@ private:
     QWidget *species;
     QWidget *palette;
     QPushButton *done;
+    ModeWidget *mode; // widget for selecting a game mode
+    QLayoutItem *deleteable; // variable for deleting widgets from a layout
     signals:
     private slots:
+        void openModeWidget(); // open the game mode selection widget
 };
 
 #endif // CREATEWIDGET_H

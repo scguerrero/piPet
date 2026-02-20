@@ -11,7 +11,7 @@ Window::Window(QWidget *parent)
     : QWidget{parent}
 {
     // instantiate label, layouts, and buttons
-    title = new QLabel("piPet: Digital pet raising game!");
+    title = new QLabel("PIPET");
     top = new QVBoxLayout();
     start_layout = new QVBoxLayout();
     start = new QPushButton("Start");
@@ -26,18 +26,19 @@ Window::Window(QWidget *parent)
 
     // when quit button is clicked, quit application
     connect(quit, SIGNAL(clicked()), QApplication::instance(), SLOT(quit()));
-    // when start button is clicked, add CreateWidget to start_layout
-    connect(start, SIGNAL(clicked()), this, SLOT(openCreateWidget()));
+    // when start button is clicked, add create widget to start_layout
+    connect(start, SIGNAL(clicked()), this, SLOT(openCreateWidget()) );
 
     // style properties
-    title->setStyleSheet("font-size: 24px; font-weight: bold");
+    title->setStyleSheet("font-size: 32px; font-weight: bold");
     title->setAlignment(Qt::AlignHCenter);
-    quit->setStyleSheet("background: navy; color: azure");
+    //quit->setStyleSheet("background: navy; color: azure");
+    quit->setStyleSheet("background: darkslategrey; color: darkseagreen");
 
     // window properties
     this->setLayout(top);
     this->setWindowTitle("piPet");
-    this->setContentsMargins(100,100,100,100);
+    this->setContentsMargins(70,70,70,70);
 }
 
 void Window::openCreateWidget()
@@ -53,3 +54,4 @@ void Window::openCreateWidget()
     // add new widget to cleared layout
     start_layout->addWidget(create);
 }
+

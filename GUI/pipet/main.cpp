@@ -14,11 +14,17 @@ int main(int argc, char**argv)
     QApplication app(argc, argv);
 
     // Set style properties
-    app.setStyleSheet("QWidget { font-family: monospace; background: azure; color: navy; letter-spacing: 1px }");
+    //app.setStyleSheet("QWidget { font-family: monospace; background: azure; color: navy; letter-spacing: 1px }");
+    app.setStyleSheet("QWidget { font-size: 24px; font-family: monospace; background: darkseagreen; color: darkslategray; letter-spacing: 1px }");
 
     // Initialize main window
     Window window;
-    window.showFullScreen();
+    // Fullscreen necessary for RaspPi
+    //window.showFullScreen();
+
+    // Non-fullscreen mode for testing
+    window.show();
+    window.setFixedSize(480,640);
 
     return app.exec(); // launches event loop
 }
